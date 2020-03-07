@@ -1,0 +1,31 @@
+﻿@model ComeWatch.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+@if (Model.Customers.Count == 0)
+{
+    <text>No one has rented this movie before.</text>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.Customers)
+            {
+                <tr>
+                    <td>@i.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
